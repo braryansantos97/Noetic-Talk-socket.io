@@ -2,12 +2,12 @@
 // const express = require("express");
 // const socketio = require("socket.io");
 
-const PORT = process.env.PORT || 3000;
-const cors = require('cors');
+// const PORT = process.env.PORT || 3000;
+// const cors = require('cors');
 // const app = express();
 // const httpServer = http.Server(app)
 // const io = socketio(httpServer);
-app.use(cors());
+// app.use(cors());
 // app.use(express.json());
 //
 // let rooms = [];
@@ -44,10 +44,13 @@ app.use(cors());
 const PORT = process.env.PORT || 3000;
 const socketio = require("socket.io");
 const io = socketio();
+const cors = require('cors');
+
+app.use(cors());
 
 io.on('connection', function(socket) {
   socket.on('send', function(message){
       io.emit('receive', message);
   });
 });
-io.listen(3PORT);
+io.listen(PORT);
