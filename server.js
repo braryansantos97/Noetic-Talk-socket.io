@@ -1,13 +1,13 @@
 // const http = require('http')
 // const express = require("express");
 // const socketio = require("socket.io");
+
 const PORT = process.env.PORT || 3000;
 const cors = require('cors');
 // const app = express();
 // const httpServer = http.Server(app)
 // const io = socketio(httpServer);
-//
- app.use(cors());
+app.use(cors());
 // app.use(express.json());
 //
 // let rooms = [];
@@ -41,6 +41,7 @@ const cors = require('cors');
 //
 // httpServer.listen(PORT);
 
+const PORT = process.env.PORT || 3000;
 const socketio = require("socket.io");
 const io = socketio();
 
@@ -49,4 +50,4 @@ io.on('connection', function(socket) {
       io.emit('receive', message);
   });
 });
-io.listen(3000||PORT);
+io.listen(3PORT);
