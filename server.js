@@ -1,7 +1,7 @@
 // const http = require('http')
 // const express = require("express");
 // const socketio = require("socket.io");
-const PORT = process.env.PORT || 3000;
+// const PORT = process.env.PORT || 3000;
 // const cors = require('cors');
 // const app = express();
 // const httpServer = http.Server(app)
@@ -41,6 +41,7 @@ const PORT = process.env.PORT || 3000;
 //
 // httpServer.listen(PORT);
 
+const PORT = process.env.PORT || 3000;
 const socketio = require("socket.io");
 const io = socketio();
 
