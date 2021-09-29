@@ -46,7 +46,7 @@ const socketio = require("socket.io");
 const io = socketio();
 const cors = require('cors');
 const app = express();
-app.use(cors());
+app.use(cors({origin:'*'}));
 
 io.on('connection', function(socket) {
   socket.on('send', function(message){
