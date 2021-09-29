@@ -43,7 +43,7 @@
 const express = require("express");
 const PORT = process.env.PORT || 3000;
 const socketio = require("socket.io"({
-  cors:{origin:'*'}
+  cors:{origin:'localhost:3000/chat'}
 }));
 const io = socketio();
 const cors = require('cors');
