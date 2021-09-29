@@ -44,7 +44,6 @@ const express = require("express");
 const PORT = process.env.PORT || 3000;
 const socketio = require("socket.io");
 const io = socketio();
-const httpServer = http.Server(app)
 const cors = require('cors');
 const app = express();
 const httpServer = http.Server(app);
