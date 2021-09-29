@@ -42,13 +42,14 @@
 // httpServer.listen(PORT);
 const express = require("express");
 const PORT = process.env.PORT || 3000;
-const socketio = require("socket.io"({
-  cors:{origin:'localhost:3000/chat'}
-}));
+const socketio = require("socket.io");
 const io = socketio();
 const cors = require('cors');
 const app = express();
-app.use(cors());
+app.all('/fetch', request, response, next) =>{
+  response.header('Access-Control-Allow-Origin', '*');
+  next();
+}
 
 io.on('connection', function(socket) {
   socket.on('send', function(message){
