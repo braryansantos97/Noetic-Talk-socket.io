@@ -42,11 +42,13 @@
 // httpServer.listen(PORT);
 const express = require("express");
 const PORT = process.env.PORT || 3000;
-const socketio = require("socket.io");
+const socketio = require("socket.io"({
+  cors:{origin:'*'}
+}));
 const io = socketio();
 const cors = require('cors');
 const app = express();
-app.use(cors({origin:'*'}));
+app.use(cors());
 
 io.on('connection', function(socket) {
   socket.on('send', function(message){
