@@ -40,12 +40,12 @@
 // });
 //
 // httpServer.listen(PORT);
-
+const express = require("express");
 const PORT = process.env.PORT || 3000;
 const socketio = require("socket.io");
 const io = socketio();
 const cors = require('cors');
-
+const app = express();
 app.use(cors());
 
 io.on('connection', function(socket) {
